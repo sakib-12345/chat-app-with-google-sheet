@@ -300,8 +300,7 @@ with st.sidebar:
             else:
                 if col2.button("Unban", key=f"unban_{username}", use_container_width=True):
                     unban_user(username)
-        hide_separator = "---" if user['role'] == 'admin' else ""           
-        st.markdown(hide_separator)
+        
         
 
 # ==========================================================
@@ -441,3 +440,4 @@ st.markdown(
             unsafe_allow_html=True
 
            ) 
+
