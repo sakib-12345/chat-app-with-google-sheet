@@ -324,7 +324,7 @@ with left:
             text = m.get('content', 'No content')
             ts = m.get('timestamp', 'N/A')
             
-            avatar = "👮" if role == "admin" else "👤"
+            avatar = "🙎🏻‍♂️" if role == "admin" else "👤"
 
             with st.chat_message(author, avatar=avatar):
                 if role == 'admin':
@@ -440,4 +440,5 @@ st.markdown(
             unsafe_allow_html=True
 
            ) 
+
 
