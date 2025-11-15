@@ -284,12 +284,12 @@ with st.sidebar:
             display_text = f"**{display_text} (You)**"
         
         status_emoji = "(Admin)" if user['role'] == 'admin' else ""
-        
+        s = "🙎🏻‍♂️" if user['role'] == 'admin' else "👤"
         if is_banned:
             status_emoji = "🚫(banned)"
             display_text = f"~~{display_text}~~"
         
-        st.markdown(f"{display_text}{status_emoji}", unsafe_allow_html=True)
+        st.markdown(f"{s}{display_text}{status_emoji}", unsafe_allow_html=True)
         
         if is_admin and not is_current:
             col1, col2 = st.columns(2)
@@ -439,4 +439,5 @@ st.sidebar.markdown(
 st.markdown(
             f'<div style="text-align: center; color: grey;">&copy; 2025 Sakib Hossain Tahmid. All Rights Reserved.</div>',
             unsafe_allow_html=True
+
            ) 
