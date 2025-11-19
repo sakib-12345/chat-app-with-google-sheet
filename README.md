@@ -1,6 +1,6 @@
 
 
-# 💬 Streamlit Chat App
+# 💬 Chat App
 Author: Sakib Hossain Tahmid
 * Try my App [Click Here](https://chat-app-sakib12345.streamlit.app/)
 * A simple real-time chat web app built with **Python** and **Streamlit**, using **Google Sheets** as the datastore. Users can sign up, log in, chat with others, and admins can ban users and clear messages.
