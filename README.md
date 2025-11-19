@@ -27,14 +27,14 @@ Author: Sakib Hossain Tahmid
 ## 🔧 Setup
 
 
-## Setup
+
 #### 1.Clone
 ```bash
-git clone https://github.com/sakib-12345/No-Code-ML-WEBapp.git
+https://github.com/sakib-12345/chat-app-with-google-sheet.git
 ```
 #### 2.Open folder
 ```bash
-cd no-code-ml-webapp
+cd chat-app-with-google-sheet
 ```
 #### 3.Install Libraries
 ```bash
@@ -42,7 +42,7 @@ pip install -r requirements.txt
 ```
 #### 4.Run it (Locally)
 ```bash
-streamlit run app.py
+streamlit run chat.py
 ```
 ## License
 - This project is licensed under the MIT License. You can use, copy, and modify it freely as long as you include the original license.
