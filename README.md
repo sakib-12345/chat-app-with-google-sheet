@@ -41,6 +41,16 @@ Author: Sakib Hossain Tahmid
   - users: **| username | password | role |**
   - messeges: **| username | role | content | timestamp |**
   - banned: **| username |**
+- EDITIONAL STEP :You have to replace the *SPREADSHEET_ID* variable id  with your sheet id.(Line 10 in chat.py file)
+
+> you can find the id from url.Then, copy this area:
+```python
+    https://docs.google.com/spreadsheets/d/<YOUR_SHEET_ID_HERE>/edit#gid=0
+```
+> Paste it there(you will find the variable in line 10 in chat.py file)
+```python
+    SPREADSHEET_ID = "<YOUR_SHEET_ID_HERE>"
+```
 - **Step 4:** Add google service account email in the sheet(as a editor)    
 - **Step 5:** Copy the API configuration file and convert it into a TOML-style format. Keep this file strictly confidential.
 - **Step 6:** Use the file as your environment variable configuration.
