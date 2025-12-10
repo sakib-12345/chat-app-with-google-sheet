@@ -108,6 +108,40 @@ def add_message(username, role, content):
     # This forces get_messages_cached() to fetch new data on the rerun.
     st.cache_data.clear() 
     st.rerun()
+
+
+def delete_user(username):
+    """Deletes a user and all their messages."""
+    try:
+        # Delete user from users sheet
+        users = users_ws.get_all_records()
+        user_rows = [i + 2 for i, u in enumerate(users) if u.get("username") == username]
+
+        if user_rows:
+            users_ws.delete_rows(user_rows[0])
+        
+        # Delete user from banned list if exists
+        banned = banned_ws.get_all_records()
+        banned_rows = [i + 2 for i, b in enumerate(banned) if b.get("username") == username]
+        if banned_rows:
+            banned_ws.delete_rows(banned_rows[0])
+        
+        # Delete messages from this user
+        messages = messages_ws.get_all_records()
+        message_rows = [i + 2 for i, m in enumerate(messages) if m.get("username") == username]
+
+        # delete in reverse so index doesn't break
+        for row in reversed(message_rows):
+            messages_ws.delete_rows(row)
+
+        st.cache_data.clear()
+        return True, f"User '{username}' and all their messages were deleted."
+    except Exception as e:
+        return False, f"Error deleting user: {e}"
+
+
+
+
 # ---------------------- CACHED DATA ----------------------
 @st.cache_data(ttl=60) 
 def get_messages_cached():
@@ -292,7 +326,7 @@ with st.sidebar:
         st.markdown(f"{s}{display_text}{status_emoji}", unsafe_allow_html=True)
         
         if is_admin and not is_current:
-            col1, col2 = st.columns(2)
+            col1, col2 = st.columns(3)
             
             if not is_banned:
                 if col1.button("Ban", key=f"ban_{username}", use_container_width=True):
@@ -300,7 +334,14 @@ with st.sidebar:
             else:
                 if col2.button("Unban", key=f"unban_{username}", use_container_width=True):
                     unban_user(username)
-        
+            
+            if col3.button("Delete", key=f"delete_{username}", use_container_width=True):
+                ok, msg = delete_user(username)
+                if ok:
+                    st.success(msg)
+                    st.rerun()
+                else:
+                    st.error(msg)
         
 
 # ==========================================================
@@ -440,6 +481,7 @@ st.markdown(
             unsafe_allow_html=True
 
            ) 
+
 
 
 
