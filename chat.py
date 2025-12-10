@@ -297,6 +297,11 @@ st_autorefresh(interval=30000, key="chat_refresh")
 # ==========================================================
 
 with st.sidebar:
+    st.header("🗿 Profile")  
+    user_profs = st.container(height=150)
+    with user_profs:
+             st.caption(f"Your Role: **{st.session_state.role.capitalize()}**")     
+    st.markdown("---")     
     st.header("👤 Users Online")
     
     current_username = st.session_state.username
@@ -385,9 +390,7 @@ with left:
 
 with right:
     st.caption(f"Your Role: **{st.session_state.role.capitalize()}**")
-    user_profs = st.container(height=250)
-    with user_profs:
-             st.caption(f"Your Role: **{st.session_state.role.capitalize()}**")
+    
     if st.button("Log Out", type="primary", use_container_width=True):
         st.session_state.clear()
         st.rerun()
@@ -483,6 +486,7 @@ st.markdown(
             unsafe_allow_html=True
 
            ) 
+
 
 
 
