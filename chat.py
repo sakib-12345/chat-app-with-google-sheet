@@ -303,7 +303,7 @@ with st.sidebar:
     
     user_data = get_all_users_cached()
          
-    st.markdown(f"**Name: {current_user}**")     
+    st.markdown(f"**Name: {current_username}**")     
     st.caption(f"Your Role: **{st.session_state.role.capitalize()}**")     
     st.markdown("---")     
     st.header("👤 Users Online")
@@ -486,6 +486,7 @@ st.markdown(
             unsafe_allow_html=True
 
            ) 
+
 
 
 
