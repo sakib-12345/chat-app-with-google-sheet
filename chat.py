@@ -326,7 +326,7 @@ with st.sidebar:
         st.markdown(f"{s}{display_text}{status_emoji}", unsafe_allow_html=True)
         
         if is_admin and not is_current:
-            col1, col2 = st.columns(3)
+            col1, col2, col3 = st.columns(3)
             
             if not is_banned:
                 if col1.button("Ban", key=f"ban_{username}", use_container_width=True):
@@ -481,6 +481,7 @@ st.markdown(
             unsafe_allow_html=True
 
            ) 
+
 
 
 
