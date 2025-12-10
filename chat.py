@@ -239,7 +239,7 @@ if not st.session_state.logged_in:
             with st.expander("Why use Google Sheets?"):
                 st.write("### Its freeeee.....")     
                 st.write("Other databases are limmited for free access.Here is google sheet, it’s enough fast for normal, easy to manage, and perfect for small realtime apps.")
-
+                st.write("**GOOD FOR SMALL NUMBER OF USERS** 📍")
             with st.expander("Why this webapp(Other apps like messenger still exist)?"):
                 st.write("You can chat with your frineds in your own web. Pretty cool!!! hah? ")
 
@@ -248,7 +248,7 @@ if not st.session_state.logged_in:
     Yes...This app is built to be simple, lightweight, and easy to understand.
     Using Google Sheets as the backend lets us create a real chat system
     without complex servers while still learning full-stack concepts.
-    <div style="text-align: center; color: orange;">Do you wanna create your own web??<br>Go here for guide: <a href="https://github.com/sakib-12345/chat-app-with-google-sheet">Github Project Link</a> </div>
+    <div style="text-align: center; color: orange;">Do you wanna create your own web??<br>Guideline: <a href="https://github.com/sakib-12345/chat-app-with-google-sheet">Github Project Link</a> </div>
     """, unsafe_allow_html=True )
 
 
@@ -517,6 +517,7 @@ st.markdown(
             unsafe_allow_html=True
 
            ) 
+
 
 
 
