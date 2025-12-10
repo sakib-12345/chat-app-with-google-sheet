@@ -220,7 +220,36 @@ if not st.session_state.logged_in:
             else:
                 st.error(msg)
     with tab3:
-         st.markdown("> Coming soon.....")
+         
+        col1, col2 = st.columns(2)
+
+# ------------------- COLUMN 1 -------------------
+        with col1:
+            with st.expander("Who made this app?"):
+                st.write("Hey I am Shakib. Nice to meet you 🖐")
+
+            with st.expander("How does the chat work?"):
+                st.write("Messages and users are stored in Google Sheets, acting as a lightweight backend.")
+
+            with st.expander("Is my data safe?"):
+                st.write("Yeah, no tracking, no ads, no shady stuff. Everything stays simple and local.")
+
+# ------------------- COLUMN 2 -------------------
+        with col2:
+            with st.expander("Why use Google Sheets?"):
+                st.write("Because it’s enough fast for normal, easy to manage, and perfect for small realtime apps.")
+
+            with st.expander("Why a chat webapp"):
+                st.write("You can chat with your frineds in your own web. Pretty cool!!! hah? ")
+
+            with st.expander("Is the app really easy to deploy?"):
+                st.markdown("""
+    Yes...This app is built to be simple, lightweight, and easy to understand.
+    Using Google Sheets as the backend lets us create a real chat system
+    without complex servers while still learning full-stack concepts.
+    <div style="text-align: center; color: orange;">Just Follow: <a href="https://github.com/sakib-12345/chat-app-with-google-sheet">Github Project Link</a> </div>
+    """, unsafe_allow_html=True )
+
 
     st.markdown(
     """
@@ -487,6 +516,7 @@ st.markdown(
             unsafe_allow_html=True
 
            ) 
+
 
 
 
