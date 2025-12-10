@@ -193,7 +193,7 @@ if "logged_in" not in st.session_state:
 # ---------------------- LOGIN/SIGN UP ----------------------
 if not st.session_state.logged_in:
     st.title("Welcome to the Chat App 💬")
-    tab1, tab2 = st.tabs(["Login 🔑", "Sign Up 📝"])
+    tab1, tab2, tab3 = st.tabs(["Login 🔑", "Sign Up 📝", "About us 📊"])
     
     with tab1:
         username = st.text_input("Username", placeholder="Enter username", key="login_user")
@@ -219,7 +219,8 @@ if not st.session_state.logged_in:
                 st.success(msg)
             else:
                 st.error(msg)
-    
+    with tab3:
+         st.markdown("> Coming soon.....")
 
     st.markdown(
     """
@@ -486,6 +487,7 @@ st.markdown(
             unsafe_allow_html=True
 
            ) 
+
 
 
 
