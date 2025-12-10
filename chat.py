@@ -247,7 +247,7 @@ if not st.session_state.logged_in:
     Yes...This app is built to be simple, lightweight, and easy to understand.
     Using Google Sheets as the backend lets us create a real chat system
     without complex servers while still learning full-stack concepts.
-    <div style="text-align: center; color: orange;">Just Follow: <a href="https://github.com/sakib-12345/chat-app-with-google-sheet">Github Project Link</a> </div>
+    <div style="text-align: center; color: orange;">How to deploy??<br>Go to: <a href="https://github.com/sakib-12345/chat-app-with-google-sheet">Github Project Link</a> </div>
     """, unsafe_allow_html=True )
 
 
@@ -516,6 +516,7 @@ st.markdown(
             unsafe_allow_html=True
 
            ) 
+
 
 
 
