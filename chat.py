@@ -298,16 +298,17 @@ st_autorefresh(interval=30000, key="chat_refresh")
 
 with st.sidebar:
     st.header("🗿 Profile")  
+    current_username = st.session_state.username
+    is_admin = st.session_state.role == "admin"
+    
+    user_data = get_all_users_cached()
+         
     st.markdown(f"**Name: {current_user}**")     
     st.caption(f"Your Role: **{st.session_state.role.capitalize()}**")     
     st.markdown("---")     
     st.header("👤 Users Online")
     
-    current_username = st.session_state.username
-    is_admin = st.session_state.role == "admin"
-    
-    user_data = get_all_users_cached()
-    
+
     for user in user_data:
         username = user['username']
         is_banned = user['is_banned']
@@ -485,6 +486,7 @@ st.markdown(
             unsafe_allow_html=True
 
            ) 
+
 
 
 
