@@ -326,16 +326,16 @@ with st.sidebar:
         st.markdown(f"{s}{display_text}{status_emoji}", unsafe_allow_html=True)
         
         if is_admin and not is_current:
-            col1, col2, col3 = st.columns(3)
+            col1, col2 = st.columns(2)
             
             if not is_banned:
                 if col1.button("Ban", key=f"ban_{username}", use_container_width=True):
                     ban_user(username)
             else:
-                if col2.button("Unban", key=f"unban_{username}", use_container_width=True):
+                if col1.button("Unban", key=f"unban_{username}", use_container_width=True):
                     unban_user(username)
             
-            if col3.button("Delete", key=f"delete_{username}", use_container_width=True):
+            if col2.button("Delete", key=f"delete_{username}", use_container_width=True):
                 ok, msg = delete_user(username)
                 if ok:
                     st.success(msg)
@@ -481,6 +481,7 @@ st.markdown(
             unsafe_allow_html=True
 
            ) 
+
 
 
 
