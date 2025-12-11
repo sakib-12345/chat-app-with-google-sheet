@@ -343,7 +343,7 @@ with st.sidebar:
     
     user_data = get_all_users_cached()
          
-    st.markdown(f"**Name: {current_username}**")     
+    st.caption(f"**Name: {current_username}**")     
     st.caption(f"Your Role: **{st.session_state.role.capitalize()}**")     
     st.markdown("---")     
     st.header("👤 Users Online")
@@ -358,7 +358,8 @@ with st.sidebar:
         
         if user['role'] == 'admin':
             display_text = f"<span {ADMIN_NAME_STYLE}>{display_text}</span>"
-            
+        else:
+            display_text = f"<span style='color:green; font-weight:bold;'>{display_text}</span>"     
         if is_current:
             display_text = f"**{display_text} (You)**"
         
@@ -526,6 +527,7 @@ st.markdown(
             unsafe_allow_html=True
 
            ) 
+
 
 
 
