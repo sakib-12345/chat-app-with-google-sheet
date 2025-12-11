@@ -421,7 +421,7 @@ with left:
                     role_text = f"({role.capitalize()})"
                 
                 st.markdown(f"{name_html} {role_text} - *{ts}*", unsafe_allow_html=True)
-                with st.container():     
+                with st.container(height=100):     
                     st.markdown(text, unsafe_allow_html=True)
 
     # Chat Input
@@ -527,6 +527,7 @@ st.markdown(
             unsafe_allow_html=True
 
            ) 
+
 
 
 
