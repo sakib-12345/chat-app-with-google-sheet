@@ -201,12 +201,7 @@ st.markdown(hide_st_style, unsafe_allow_html=True)
 # ---------------------- SESSION STATE INITIALIZATION ----------------------
 if "logged_in" not in st.session_state:
     st.session_state.logged_in = False
-# ---------------------- AUTO BAN LOGOUT CHECK ----------------------
-if st.session_state.logged_in:
-    if is_user_banned(st.session_state.username):
-        st.session_state.logged_in = False
-        st.session_state.banned_flag = True
-        st.rerun()
+
 
 # ---------------------- LOGIN/SIGN UP ----------------------
 if not st.session_state.logged_in:
@@ -337,14 +332,12 @@ if not st.session_state.logged_in:
             unsafe_allow_html=True
            )             
     st.stop()
+
 # ---------------------- AUTO BAN LOGOUT CHECK ----------------------
-if st.session_state.logged_in:
-    if is_user_banned(st.session_state.username):
-        st.session_state.logged_in = False
-        st.session_state.banned_flag = True
-        st.rerun()
-
-
+if is_user_banned(st.session_state.username):
+    st.session_state.clear()
+    st.error("You have been banned from this service.")
+    
 # ---------------------- AUTO REFRESH ----------------------
 st_autorefresh(interval=30000, key="chat_refresh") 
 
@@ -544,6 +537,7 @@ st.markdown(
             unsafe_allow_html=True
 
            ) 
+
 
 
 
