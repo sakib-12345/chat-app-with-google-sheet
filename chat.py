@@ -337,7 +337,7 @@ if not st.session_state.logged_in:
 if is_user_banned(st.session_state.username):
     st.session_state.clear()
     st.error("You have been banned from this service.")
-    
+    st.return()
 # ---------------------- AUTO REFRESH ----------------------
 st_autorefresh(interval=30000, key="chat_refresh") 
 
@@ -537,6 +537,7 @@ st.markdown(
             unsafe_allow_html=True
 
            ) 
+
 
 
 
