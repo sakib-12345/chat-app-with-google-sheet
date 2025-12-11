@@ -336,6 +336,7 @@ if st.session_state.logged_in:
     if is_user_banned(st.session_state.username):
         st.session_state.clear()
         st.error("You have been banned from the chat.")
+        time.sleep(5)     
         st.rerun()
 
 # ---------------------- AUTO REFRESH ----------------------
@@ -537,6 +538,7 @@ st.markdown(
             unsafe_allow_html=True
 
            ) 
+
 
 
 
