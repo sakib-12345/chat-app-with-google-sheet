@@ -139,6 +139,9 @@ def delete_user(username):
     except Exception as e:
         return False, f"Error deleting user: {e}"
 
+def is_user_banned(username):
+    banned_users = [b.get('username') for b in banned_ws.get_all_records() if b.get('username')]
+    return username in banned_users
 
 
 
@@ -328,6 +331,12 @@ if not st.session_state.logged_in:
             unsafe_allow_html=True
            )             
     st.stop()
+# ---------------------- AUTO BAN LOGOUT ----------------------
+if st.session_state.logged_in:
+    if is_user_banned(st.session_state.username):
+        st.session_state.clear()
+        st.error("You have been banned from the chat.")
+        st.rerun()
 
 # ---------------------- AUTO REFRESH ----------------------
 st_autorefresh(interval=30000, key="chat_refresh") 
@@ -528,6 +537,7 @@ st.markdown(
             unsafe_allow_html=True
 
            ) 
+
 
 
 
