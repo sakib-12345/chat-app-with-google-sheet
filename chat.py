@@ -358,8 +358,7 @@ with st.sidebar:
         
         if user['role'] == 'admin':
             display_text = f"<span {ADMIN_NAME_STYLE}>{display_text}</span>"
-        else:
-            display_text = f"<span style='color:green; font-weight:bold;'>{display_text}</span>"     
+    
         if is_current:
             display_text = f"**{display_text} (You)**"
         
@@ -422,7 +421,7 @@ with left:
                     role_text = f"({role.capitalize()})"
                 
                 st.markdown(f"{name_html} {role_text} - *{ts}*", unsafe_allow_html=True)
-                st.markdown(text, unsafe_allow_html=True)
+                st.markdown(f"> {text}", unsafe_allow_html=True)
 
     # Chat Input
     msg = st.chat_input("Type a message...")
@@ -527,6 +526,7 @@ st.markdown(
             unsafe_allow_html=True
 
            ) 
+
 
 
 
