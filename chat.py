@@ -422,7 +422,10 @@ with left:
                 
                 st.markdown(f"{name_html} {role_text} - *{ts}*", unsafe_allow_html=True)
                 with st.container(horizontal=True):     
-                    st.markdown(text, unsafe_allow_html=True)
+                    st.markdown(
+                        f"<div class='text-box'>{text}</div>",
+                        unsafe_allow_html=True
+                        )
 
     # Chat Input
     msg = st.chat_input("Type a message...")
@@ -527,6 +530,7 @@ st.markdown(
             unsafe_allow_html=True
 
            ) 
+
 
 
 
