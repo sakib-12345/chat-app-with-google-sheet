@@ -421,9 +421,7 @@ with left:
                     role_text = f"({role.capitalize()})"
                 
                 st.markdown(f"{name_html} {role_text} - *{ts}*", unsafe_allow_html=True)
-                with st.container(horizontal=True):     
-                    st.markdown(
-                        f"<div class='text-box'>{text}</div>",
+                st.markdown(text,
                         unsafe_allow_html=True
                         )
 
@@ -530,6 +528,7 @@ st.markdown(
             unsafe_allow_html=True
 
            ) 
+
 
 
 
