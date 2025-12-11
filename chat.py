@@ -186,6 +186,15 @@ def get_all_users_cached():
 # ---------------------- STREAMLIT CONFIG ----------------------
 st.set_page_config(page_title="Chat App", layout="wide", page_icon="icon.png")
 
+
+hide_st_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            header {visibility: hidden;}
+            </style>
+            """
+st.markdown(hide_st_style, unsafe_allow_html=True)
 # ---------------------- SESSION STATE INITIALIZATION ----------------------
 if "logged_in" not in st.session_state:
     st.session_state.logged_in = False
@@ -517,6 +526,7 @@ st.markdown(
             unsafe_allow_html=True
 
            ) 
+
 
 
 
